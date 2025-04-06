@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathTube - Game Player</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .comment-box {
+            transition: all 0.3s ease;
+        }
+        .comment-box:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-3 px-6 sticky top-0 z-50">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-red-600 text-xl">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="text-red-600 text-xl font-bold">
+                    <i class="fas fa-gamepad"></i> MathTube
+                </div>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button class="text-gray-600 hover:text-red-600">
+                    <i class="fas fa-share-alt"></i>
+                </button>
+                <button class="text-gray-600 hover:text-red-600">
+                    <i class="fas fa-bookmark"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-6 px-4">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Game Player Section -->
+            <div class="lg:w-3/4">
+                <!-- Game Embed -->
+                <div class="bg-black rounded-lg overflow-hidden mb-6">
+                    <div id="game-container" class="w-full aspect-video bg-gray-800 flex items-center justify-center">
+                        <iframe id="game-iframe" src="" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                        <div id="game-loading" class="text-white text-center p-8">
+                            <i class="fas fa-spinner fa-spin text-4xl mb-4"></i>
+                            <p>Loading game...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Info -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                    <h1 id="game-title" class="text-2xl font-bold mb-2">Math Puzzle Challenge</h1>
+                    <div class="flex items-center text-gray-600 mb-4">
+                        <span class="mr-4"><i class="fas fa-eye mr-1"></i> 1,245 plays</span>
+                        <span><i class="fas fa-calendar-alt mr-1"></i> Added 2 weeks ago</span>
+                    </div>
+                    <p id="game-description" class="text-gray-700">
+                        Solve challenging math puzzles using basic arithmetic operations. This game helps improve 
+                        your problem-solving skills and mental math abilities. Perfect for students in grades 3-6.
+                    </p>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h2 class="text-xl font-bold mb-4">Comments (3)</h2>
+                    
+                    <!-- Comment Form -->
+                    <form id="comment-form" class="mb-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
+                                <i class="fas fa-user text-gray-500"></i>
+                            </div>
+                            <div class="flex-1">
+                                <textarea class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" 
+                                          placeholder="Add a comment..." rows="2"></textarea>
+                                <div class="flex justify-end mt-2">
+                                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-full">
+                                        Post Comment
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Comments List -->
+                    <div class="space-y-4">
+                        <!-- Comment 1 -->
+                        <div class="comment-box p-4 rounded-lg border border-gray-200">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-user text-blue-500"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="font-bold">MathLover42</h3>
+                                        <span class="text-sm text-gray-500">2 days ago</span>
+                                    </div>
+                                    <p class="text-gray-700 mt-1">This game helped my son improve his multiplication skills!</p>
+                                    <div class="flex items-center mt-2 text-sm text-gray-500 space-x-4">
+                                        <button class="hover:text-red-600"><i class="fas fa-thumbs-up"></i> 5</button>
+                                        <button class="hover:text-red-600"><i class="fas fa-thumbs-down"></i></button>
+                                        <button class="hover:text-red-600">Reply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comment 2 -->
+                        <div class="comment-box p-4 rounded-lg border border-gray-200">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-user text-purple-500"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <h3 class="font-bold">TeacherSarah</h3>
+                                        <span class="text-sm text-gray-500">1 week ago</span>
+                                    </div>
+                                    <p class="text-gray-700 mt-1">I use this in my classroom - the kids love it!</p>
+                                    <div class="flex items-center mt-2 text-sm text-gray-500 space-x-4">
+                                        <button class="hover:text-red-600"><i class="fas fa-thumbs-up"></i> 12</button>
+                                        <button class="hover:text-red-600"><i class="fas fa-thumbs-down"></i></button>
+                                        <button class="hover:text-red-600">Reply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:w-1/4 space-y-6">
+                <!-- Related Games -->
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <h2 class="text-lg font-bold mb-4">More Math Games</h2>
+                    <div class="space-y-4">
+                        <!-- Related Game 1 -->
+                        <a href="game.html?gameId=2" class="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-lg">
+                            <img src="https://images.pexels.com/photos/5904934/pexels-photo-5904934.jpeg" 
+                                 alt="Algebra Game" class="w-16 h-16 rounded-md object-cover">
+                            <div>
+                                <h3 class="font-medium">Algebra Master</h3>
+                                <p class="text-sm text-gray-500">Solve for x</p>
+                            </div>
+                        </a>
+
+                        <!-- Related Game 2 -->
+                        <a href="game.html?gameId=3" class="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-lg">
+                            <img src="https://images.pexels.com/photos/5904936/pexels-photo-5904936.jpeg" 
+                                 alt="Geometry Game" class="w-16 h-16 rounded-md object-cover">
+                            <div>
+                                <h3 class="font-medium">Geometry Explorer</h3>
+                                <p class="text-sm text-gray-500">Shapes & angles</p>
+                            </div>
+                        </a>
+
+                        <!-- Related Game 3 -->
+                        <a href="game.html?gameId=4" class="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-lg">
+                            <img src="https://images.pexels.com/photos/5904938/pexels-photo-5904938.jpeg" 
+                                 alt="Fractions Game" class="w-16 h-16 rounded-md object-cover">
+                            <div>
+                                <h3 class="font-medium">Fraction Frenzy</h3>
+                                <p class="text-sm text-gray-500">Master fractions</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Game Details -->
+                <div class="bg-white rounded-lg shadow-sm p-4">
+                    <h2 class="text-lg font-bold mb-3">About This Game</h2>
+                    <div class="space-y-3">
+                        <div>
+                            <h3 class="font-medium text-gray-700">Difficulty</h3>
+                            <p class="text-sm text-gray-500">Beginner</p>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-700">Grade Level</h3>
+                            <p class="text-sm text-gray-500">3-6</p>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-gray-700">Skills</h3>
+                            <p class="text-sm text-gray-500">Addition, Subtraction, Multiplication</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Load game based on URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameId = urlParams.get('gameId');
+            
+            // Game data mapping
+            const games = {
+                '1': {
+                    title: 'Math Puzzle Challenge',
+                    description: 'Solve challenging math puzzles using basic arithmetic operations. This game helps improve your problem-solving skills and mental math abilities. Perfect for students in grades 3-6.',
+                    url: 'https://mathmasterz.com/games/puzzle-challenge'
+                },
+                '2': {
+                    title: 'Algebra Master',
+                    description: 'Solve for x in these challenging equations. Build your algebra skills with progressively difficult problems.',
+                    url: 'https://mathmasterz.com/games/algebra-master'
+                },
+                '3': {
+                    title: 'Geometry Explorer',
+                    description: 'Discover shapes, angles, and spatial reasoning through interactive geometry challenges.',
+                    url: 'https://mathmasterz.com/games/geometry-explorer'
+                },
+                '4': {
+                    title: 'Fraction Frenzy',
+                    description: 'Master fractions with this fast-paced game that makes learning fractions fun and engaging.',
+                    url: 'https://mathmasterz.com/games/fraction-frenzy'
+                }
+            };
+
+            if (gameId && games[gameId]) {
+                const game = games[gameId];
+                document.getElementById('game-title').textContent = game.title;
+                document.getElementById('game-description').textContent = game.description;
+                document.getElementById('game-iframe').src = game.url;
+                
+                // Hide loading spinner when iframe loads
+                document.getElementById('game-iframe').onload = function() {
+                    document.getElementById('game-loading').style.display = 'none';
+                };
+            } else {
+                document.getElementById('game-container').innerHTML = `
+                    <div class="text-white text-center p-8">
+                        <i class="fas fa-exclamation-triangle text-4xl mb-4"></i>
+                        <p>Game not found. Please return to the <a href="index.html" class="text-red-400 underline">home page</a>.</p>
+                    </div>
+                `;
+            }
+
+            // Comment form submission
+            document.getElementById('comment-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Comment submitted! (Note: This is a demo. Comments are not actually saved.)');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
