@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathTube - Play Math Games</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .game-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.2s ease;
+        }
+        .header-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="header-sticky shadow-md py-4 px-6">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="text-red-600 text-2xl font-bold">
+                    <i class="fas fa-gamepad"></i> MathTube
+                </div>
+                <div class="relative w-96">
+                    <input type="text" placeholder="Search games..." 
+                           class="w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <button class="absolute right-0 top-0 h-full px-4 text-gray-500">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="flex items-center space-x-6">
+                <a href="#" class="hover:text-red-600"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="hover:text-red-600"><i class="fas fa-fire"></i> Trending</a>
+                <a href="#" class="hover:text-red-600"><i class="fas fa-th-large"></i> Categories</a>
+                <a href="login.html" class="hover:text-red-600"><i class="fas fa-user"></i> Sign In</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 bg-gray-800 flex items-center justify-center">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-5xl font-bold mb-4">Play Math Games Like Never Before</h1>
+            <p class="text-xl mb-8">Master mathematics through fun and interactive games</p>
+            <a href="https://mathmasterz.com" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full inline-block">
+                Start Playing Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Game Grid Section -->
+    <main class="container mx-auto py-8 px-4">
+        <h2 class="text-2xl font-bold mb-6">Popular Math Games</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Game Card 1 -->
+            <div class="game-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                <a href="game.html?gameId=1">
+                    <img src="https://images.pexels.com/photos/5904932/pexels-photo-5904932.jpeg" 
+                         alt="Math Puzzle Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Math Puzzle Challenge</h3>
+                        <p class="text-gray-600">Solve puzzles using basic arithmetic operations</p>
+                        <div class="mt-3 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i> 4.8
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-user-graduate mr-1"></i> Beginner
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Game Card 2 -->
+            <div class="game-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                <a href="game.html?gameId=2">
+                    <img src="https://images.pexels.com/photos/5904934/pexels-photo-5904934.jpeg" 
+                         alt="Algebra Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Algebra Master</h3>
+                        <p class="text-gray-600">Solve for x in these challenging equations</p>
+                        <div class="mt-3 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i> 4.5
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-user-graduate mr-1"></i> Intermediate
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Game Card 3 -->
+            <div class="game-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                <a href="game.html?gameId=3">
+                    <img src="https://images.pexels.com/photos/5904936/pexels-photo-5904936.jpeg" 
+                         alt="Geometry Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Geometry Explorer</h3>
+                        <p class="text-gray-600">Discover shapes, angles, and spatial reasoning</p>
+                        <div class="mt-3 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i> 4.7
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-user-graduate mr-1"></i> Advanced
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Game Card 4 -->
+            <div class="game-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg">
+                <a href="game.html?gameId=4">
+                    <img src="https://images.pexels.com/photos/5904938/pexels-photo-5904938.jpeg" 
+                         alt="Fractions Game" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Fraction Frenzy</h3>
+                        <p class="text-gray-600">Master fractions with this fast-paced game</p>
+                        <div class="mt-3 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i> 4.3
+                            <span class="mx-2">•</span>
+                            <i class="fas fa-user-graduate mr-1"></i> Beginner
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-red-600 text-2xl font-bold mb-2">
+                        <i class="fas fa-gamepad"></i> MathTube
+                    </div>
+                    <p class="text-gray-400">Making math fun and accessible for everyone</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                <p>© 2024 MathTube. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
